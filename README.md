@@ -1,2 +1,2 @@
 # Den-Digitale-Proevevagt
-Decompiled version af Den Digitale Prøvevagt, med nogle feautures deaktiveret.
+Decompiled version af Den Digitale Prøvevagt, med nogle features deaktiveret.
