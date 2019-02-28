@@ -2,4 +2,4 @@
 Decompiled version af Den Digitale Prøvevagt, udviklet af Undervisningsministeriet.
 
 ## Hvordan kan det afprøves?
-Kompiler og brug enten koden "000000" eller \_TEST\_
+Kompiler og brug enten koden "000000" eller "\_TEST\_"
