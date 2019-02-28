@@ -252,6 +252,7 @@ namespace DPV
             this.Name = "UserIdEntryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Digital prøvevagt";
+            this.Load += new System.EventHandler(this.UserIdEntryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picSpinner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -259,6 +260,11 @@ namespace DPV
 		}
 
         private void lblStudentID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserIdEntryForm_Load(object sender, EventArgs e)
         {
 
         }

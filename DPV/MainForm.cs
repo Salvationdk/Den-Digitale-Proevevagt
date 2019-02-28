@@ -150,10 +150,7 @@ namespace DPV
 		_communicationsManager.TimeToStart += _communicationsManager_TimeToStart;
 		}
 
-		private void _communicationsManager_TimeToStart(object sender, EventArgs e)
-		{
-			_activeWindowChangedDetectorTool.IsEnabled = true;
-		}
+
 
 		private static void SubscribeToChangesInScreenResolution()
 		{
@@ -303,12 +300,21 @@ namespace DPV
 
 		public void CleanupAndCloseApplication()
 		{
-			if (_frmUser != null && _frmUser.Visible)
+            
+             if (_frmUser != null && _frmUser.Visible)
 			{
-				_frmUser.ClosingFromExternalSource = true;
-				_frmUser.Close();
-			}
-			_communicationsManager.SignOut();
+                //	_frmUser.ClosingFromExternalSource = true;
+                //	_frmUser.Close();
+
+                _frmUserCloseFromExternalSource(); // Replaces the actions above.
+
+            }
+
+
+
+
+
+            _communicationsManager.SignOut();
 			_activeWindowChangedDetectorTool.IsEnabled = false;
 			Thread.Sleep(1500);
 			Invoke((Action)delegate
@@ -409,5 +415,52 @@ namespace DPV
 			base.Resize += new System.EventHandler(MainForm_Resize);
 			ResumeLayout(performLayout: false);
 		}
-	}
+
+
+
+
+
+
+        #region Sections to comment out
+
+        private void _communicationsManager_TimeToStart(object sender, EventArgs e) //Disable to deactive the application from registering window changes.
+        {
+            _activeWindowChangedDetectorTool.IsEnabled = true;
+        }
+
+        private void _frmUserCloseFromExternalSource() //Used in CleanupAndCloseApplication() - This *may* note that the application was closed by an external source.
+        {
+            _frmUser.ClosingFromExternalSource = true;
+            _frmUser.Close();
+        }
+
+
+
+
+
+
+
+
+
+
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 }
