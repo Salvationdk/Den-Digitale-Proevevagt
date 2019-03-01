@@ -40,3 +40,4 @@ C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-P
 C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\obj\Release\DPV.csproj.CopyComplete
 C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\obj\Release\DPV.exe
 C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\obj\Release\DPV.pdb
+C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\bin\Release\DpvClassLibrary.pdb

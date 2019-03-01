@@ -142,13 +142,6 @@ namespace DPV
 			SubscribeToChangesInScreenResolution();
 		}
 
-		private void SubscribeToMessagesFromCommunicationsManager()
-		{
-			_communicationsManager = new CommunicationsManager();
-			_communicationsManager.EventFromServer += _communicationsManager_EventFromServer;
-			_communicationsManager.TimeToStop += _communicationsManager_TimeToStop;
-		_communicationsManager.TimeToStart += _communicationsManager_TimeToStart;
-		}
 
 
 
@@ -423,18 +416,47 @@ namespace DPV
 
         #region Sections to comment out
 
+
+
+
+        //Active cheat
+
+
+        public static bool CheatActive = true;
+
+
+
+
+
+
         private void _communicationsManager_TimeToStart(object sender, EventArgs e) //Disable to deactive the application from registering window changes.
         {
-            _activeWindowChangedDetectorTool.IsEnabled = true;
+
+          
+         //  if(!CheatActive)
+                _activeWindowChangedDetectorTool.IsEnabled = true;
+
+            
         }
 
         private void _frmUserCloseFromExternalSource() //Used in CleanupAndCloseApplication() - This *may* note that the application was closed by an external source.
         {
-            _frmUser.ClosingFromExternalSource = true;
-            _frmUser.Close();
+            //  if(!CheatActive)
+         //   {
+                _frmUser.ClosingFromExternalSource = true;
+                _frmUser.Close();
+            //}
         }
 
 
+        private void SubscribeToMessagesFromCommunicationsManager() //Starts and subscribes to logging events.
+        {
+            _communicationsManager = new CommunicationsManager();
+            _communicationsManager.CheatActive = CheatActive;
+            _communicationsManager.EventFromServer += _communicationsManager_EventFromServer;
+            _communicationsManager.TimeToStop += _communicationsManager_TimeToStop;
+            _communicationsManager.TimeToStart += _communicationsManager_TimeToStart;
+        }
 
 
 
