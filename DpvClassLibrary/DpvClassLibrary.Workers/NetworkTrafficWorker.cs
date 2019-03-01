@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static IO.Swagger.Model.DataPackage;
 
 namespace DpvClassLibrary.Workers
 {
@@ -12,7 +13,7 @@ namespace DpvClassLibrary.Workers
 	{
 		private HashSet<string> _urls = new HashSet<string>();
 
-		protected override ActiveColsEnum ActiveColType => 8;
+		protected override DataPackageEnvelope.ActiveColsEnum ActiveColType => (DataPackageEnvelope.ActiveColsEnum)8;
 
 		public NetworkTrafficWorker(IDataPackageEnvelopeReceiver receiver)
 			: base(receiver)
@@ -48,7 +49,7 @@ namespace DpvClassLibrary.Workers
 			_urls.Clear();
 			return new List<DataPackage>
 			{
-				new DataPackage(8, (bool?)false, bytes, (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
+				new DataPackage((ColTypeEnum)8, (bool?)false, bytes, (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
 			};
 		}
 

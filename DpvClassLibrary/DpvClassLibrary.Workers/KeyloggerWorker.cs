@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using static IO.Swagger.Model.DataPackage;
 
 namespace DpvClassLibrary.Workers
 {
@@ -12,7 +13,7 @@ namespace DpvClassLibrary.Workers
 	{
 		private StringBuilder _builder = new StringBuilder();
 
-		protected override ActiveColsEnum ActiveColType => 7;
+		protected override DataPackageEnvelope.ActiveColsEnum ActiveColType => (DataPackageEnvelope.ActiveColsEnum)7;
 
 		public KeyloggerWorker(IDataPackageEnvelopeReceiver receiver)
 			: base(receiver)
@@ -51,7 +52,7 @@ namespace DpvClassLibrary.Workers
 			_builder.Clear();
 			return new List<DataPackage>
 			{
-				new DataPackage(7, (bool?)false, bytes, (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
+				new DataPackage((ColTypeEnum)7, (bool?)false, bytes, (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
 			};
 		}
 	}

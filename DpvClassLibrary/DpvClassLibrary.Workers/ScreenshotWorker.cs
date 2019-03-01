@@ -4,12 +4,14 @@ using IO.Swagger.Model;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using static IO.Swagger.Model.DataPackage;
+using static IO.Swagger.Model.DataPackageEnvelope;
 
 namespace DpvClassLibrary.Workers
 {
 	public class ScreenshotWorker : DataPackageEnvelopeWorkerBase
 	{
-		protected override ActiveColsEnum ActiveColType => 3;
+		protected override ActiveColsEnum ActiveColType => (ActiveColsEnum)3;
 
 		public ScreenshotWorker(IDataPackageEnvelopeReceiver receiver)
 			: base(receiver)
@@ -26,7 +28,7 @@ namespace DpvClassLibrary.Workers
 				byte[] array = ScreenCaptureTool.ImageToByteArray(imageIn);
 				return new List<DataPackage>
 				{
-					new DataPackage(3, (bool?)false, array, (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
+					new DataPackage((ColTypeEnum)3, (bool?)false, array, (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
 				};
 			}
 		}

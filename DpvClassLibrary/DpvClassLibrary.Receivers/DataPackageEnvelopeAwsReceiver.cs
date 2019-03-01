@@ -6,6 +6,7 @@ using IO.Swagger.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using IO.Swagger.Client;
 
 namespace DpvClassLibrary.Receivers
 {
@@ -25,13 +26,13 @@ namespace DpvClassLibrary.Receivers
 
 		private static long _ticksAtLastServerTimeReceived = DateTime.Now.Ticks;
 
-		public Configuration Configuration
-		{
-			get;
-			set;
-		}
 
-		public bool IsStudentDemoMode
+        public IO.Swagger.Client.Configuration Configuration
+        {
+            get;
+            set;
+        }
+        public bool IsStudentDemoMode
 		{
 			get;
 			set;
@@ -77,7 +78,7 @@ namespace DpvClassLibrary.Receivers
 			//IL_003f: Expected O, but got Unknown
 			string valueFromAppSettings = AppSettingsHelper.GetValueFromAppSettings("DpvClassLibrary.Receivers.DataPackageEnvelopeAwsReceiver.BasePath");
 			string valueFromAppSettings2 = AppSettingsHelper.GetValueFromAppSettings("apikey");
-			Configuration = new Configuration((IDictionary<string, string>)new Dictionary<string, string>
+			Configuration = new IO.Swagger.Client.Configuration((IDictionary<string, string>)new Dictionary<string, string>
 			{
 				{
 					"x-api-key",
@@ -86,7 +87,7 @@ namespace DpvClassLibrary.Receivers
 			}, (IDictionary<string, string>)new Dictionary<string, string>(), (IDictionary<string, string>)new Dictionary<string, string>(), valueFromAppSettings);
 		}
 
-		public DataPackageEnvelopeAwsReceiver(Configuration configuration)
+		public DataPackageEnvelopeAwsReceiver(IO.Swagger.Client.Configuration configuration)
 		{
 			Configuration = configuration;
 		}
@@ -105,7 +106,7 @@ namespace DpvClassLibrary.Receivers
 					int num = 10;
 					int num2 = 60;
 					string text = $"The DPV client is now running in demo mode. It will start harvesting in {num} seconds, and end in {num2} seconds.";
-					OnResponseReceived(new DataPackageReceipt((int?)1, text, (int?)num, (int?)num2, (DateTime?)null, (List<ActivateColsEnum>)null, (List<CollectorConfig>)null));
+					OnResponseReceived(new DataPackageReceipt((int?)1, text, (int?)num, (int?)num2, (DateTime?)null, (List<DataPackageReceipt.ActivateColsEnum>)null, (List<CollectorConfig>)null));
 					_hasSentDummyDemoResponse = true;
 				}
 			}
@@ -113,7 +114,7 @@ namespace DpvClassLibrary.Receivers
 			{
 				if (!_hasSentDummyDemoResponse)
 				{
-					OnResponseReceived(new DataPackageReceipt((int?)1, (string)null, (int?)null, (int?)null, (DateTime?)null, (List<ActivateColsEnum>)null, (List<CollectorConfig>)null));
+					OnResponseReceived(new DataPackageReceipt((int?)1, (string)null, (int?)null, (int?)null, (DateTime?)null, (List<DataPackageReceipt.ActivateColsEnum>)null, (List<CollectorConfig>)null));
 					_hasSentDummyDemoResponse = true;
 				}
 			}
@@ -144,7 +145,7 @@ namespace DpvClassLibrary.Receivers
 						return;
 					}
 					DataPackageEnvelope val = _queue.DequeueNextDataPackageEnvelopeToSend();
-					_debugSentMessageIds.Add(val.get_Sequence().Value);
+					_debugSentMessageIds.Add(val.Sequence.Value);
 				}
 			}
 		}
@@ -156,14 +157,14 @@ namespace DpvClassLibrary.Receivers
 			//IL_0064: Expected O, but got Unknown
 			try
 			{
-				StaticFileLogger.Current.LogEvent(GetType().Name + ".TrySendingMessage()", $"Sending message #{nextMessage.get_Sequence()} of type: " + nextMessage.get_Packages()[0].get_ColType(), "", EventLogEntryType.Information);
+				StaticFileLogger.Current.LogEvent(GetType().Name + ".TrySendingMessage()", $"Sending message #{nextMessage.Sequence} of type: " + nextMessage.Packages[0].ColType, "", EventLogEntryType.Information);
 				ClientApi val = new ClientApi(Configuration);
 				CommunicationLog communicationLog = new CommunicationLog();
-				communicationLog.Request = Configuration.get_ApiClient().Serialize((object)nextMessage);
+				communicationLog.Request = Configuration.ApiClient.Serialize((object)nextMessage);
 				DataPackageReceipt val2 = val.Push(nextMessage);
-				if (val2.get_ServerTime().HasValue)
+				if (val2.ServerTime.HasValue)
 				{
-					ServerTime = val2.get_ServerTime().Value;
+					ServerTime = val2.ServerTime.Value;
 				}
 				OnResponseReceived(val2);
 				communicationLog.Response = val2.ToJson();
@@ -184,7 +185,7 @@ namespace DpvClassLibrary.Receivers
 		private void AddEnvelopeToQueue(DataPackageEnvelope dataPackageEnvelope)
 		{
 			//IL_003c: Unknown result type (might be due to invalid IL or missing references)
-			StaticFileLogger.Current.LogEvent(GetType().Name + ".AddEnvelopeToQueue()", $"Adding message #{dataPackageEnvelope.get_Sequence()} of type: " + dataPackageEnvelope.get_Packages()[0].get_ColType() + " to queue", "", EventLogEntryType.Information);
+			StaticFileLogger.Current.LogEvent(GetType().Name + ".AddEnvelopeToQueue()", $"Adding message #{dataPackageEnvelope.Sequence} of type: " + dataPackageEnvelope.Packages[0].ColType + " to queue", "", EventLogEntryType.Information);
 			_queue.AddDataPackageEnvelope(dataPackageEnvelope);
 		}
 

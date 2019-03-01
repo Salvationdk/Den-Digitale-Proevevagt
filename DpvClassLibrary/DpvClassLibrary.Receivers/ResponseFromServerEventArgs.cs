@@ -29,9 +29,9 @@ namespace DpvClassLibrary.Receivers
 		public ResponseFromServerEventArgs(DataPackageReceipt receipt)
 		{
 			Receipt = receipt;
-			if (receipt.get_Status().HasValue)
+			if (receipt.Status.HasValue)
 			{
-				Status = (ServerResponseStatus)receipt.get_Status().Value;
+				Status = (ServerResponseStatus)receipt.Status.Value;
 			}
 		}
 	}

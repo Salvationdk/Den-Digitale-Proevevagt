@@ -1,0 +1,10 @@
+C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\DpvClassLibrary\obj\Release\DpvClassLibrary.csprojAssemblyReference.cache
+C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\DpvClassLibrary\obj\Release\DpvClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Release\DpvClassLibrary.dll
+C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Release\DpvClassLibrary.pdb
+C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Release\IO.Swagger.dll
+C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Release\QRCodeEncoderDecoderLibrary.dll
+C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Release\zxing.dll
+C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\DpvClassLibrary\obj\Release\DpvClassLibrary.csproj.CopyComplete
+C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\DpvClassLibrary\obj\Release\DpvClassLibrary.dll
+C:\Users\hampu\OneDrive\Programmering\Projekter\DPV\Main Solution\Den-Digitale-Proevevagt\DpvClassLibrary\obj\Release\DpvClassLibrary.pdb

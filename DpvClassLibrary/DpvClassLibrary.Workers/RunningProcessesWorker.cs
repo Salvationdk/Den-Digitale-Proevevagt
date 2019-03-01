@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using static IO.Swagger.Model.DataPackageEnvelope;
 
 namespace DpvClassLibrary.Workers
 {
@@ -12,7 +13,7 @@ namespace DpvClassLibrary.Workers
 	{
 		private int _lastNumberOfRunningProcesses = 0;
 
-		protected override ActiveColsEnum ActiveColType => 1;
+		protected override ActiveColsEnum ActiveColType => (ActiveColsEnum)1;
 
 		public RunningProcessesWorker(IDataPackageEnvelopeReceiver receiver)
 			: base(receiver)
@@ -44,7 +45,7 @@ namespace DpvClassLibrary.Workers
 			}
 			return new List<DataPackage>
 			{
-				new DataPackage(5, (bool?)false, Encoding.UTF8.GetBytes(text), (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
+				new DataPackage((DataPackage.ColTypeEnum)5, (bool?)false, Encoding.UTF8.GetBytes(text), (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
 			};
 		}
 

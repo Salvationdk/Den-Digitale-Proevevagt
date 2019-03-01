@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
+using static IO.Swagger.Model.DataPackage;
 
 namespace DpvClassLibrary.Workers
 {
@@ -14,7 +15,7 @@ namespace DpvClassLibrary.Workers
 
 		private StringBuilder _builder = new StringBuilder();
 
-		protected override ActiveColsEnum ActiveColType => 2;
+		protected override DataPackageEnvelope.ActiveColsEnum ActiveColType => (DataPackageEnvelope.ActiveColsEnum)2;
 
 		public NetworkConfigRetrieverWorker(IDataPackageEnvelopeReceiver receiver)
 			: base(receiver)
@@ -28,7 +29,7 @@ namespace DpvClassLibrary.Workers
 			byte[] bytes = Encoding.UTF8.GetBytes(GetNetworkConfigurationData());
 			return new List<DataPackage>
 			{
-				new DataPackage(2, (bool?)false, bytes, (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
+				new DataPackage((ColTypeEnum)2, (bool?)false, bytes, (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
 			};
 		}
 

@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Management;
 using System.Text;
+using static IO.Swagger.Model.DataPackage;
+using static IO.Swagger.Model.DataPackageEnvelope;
 
 namespace DpvClassLibrary.Workers
 {
@@ -18,7 +20,7 @@ namespace DpvClassLibrary.Workers
 			"virtualbox"
 		};
 
-		protected override ActiveColsEnum ActiveColType => 4;
+		protected override ActiveColsEnum ActiveColType => (ActiveColsEnum)4;
 
 
         public bool CheatActive = false;
@@ -38,7 +40,7 @@ namespace DpvClassLibrary.Workers
 			bool flag = AmIRunningInVirtualMachineOrHaveAVirtualMachineProcessRunning();
 			return new List<DataPackage>
 			{
-				new DataPackage(4, (bool?)false, Encoding.UTF8.GetBytes(flag.ToString()), (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
+				new DataPackage((ColTypeEnum)4, (bool?)false, Encoding.UTF8.GetBytes(flag.ToString()), (DateTime?)DataPackageEnvelopeAwsReceiver.ServerTime, (long?)GetAndIncrementWorkSequence())
 			};
 		}
 
