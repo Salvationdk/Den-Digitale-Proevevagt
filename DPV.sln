@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPV", "DPV.csproj", "{E26AFCB3-33E3-47A4-BE4E-5214D56603C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DpvClassLibrary", "DpvClassLibrary\DpvClassLibrary.csproj", "{DCF6F2DC-DD46-4ADA-9616-FFFE81089C73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E26AFCB3-33E3-47A4-BE4E-5214D56603C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E26AFCB3-33E3-47A4-BE4E-5214D56603C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E26AFCB3-33E3-47A4-BE4E-5214D56603C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF6F2DC-DD46-4ADA-9616-FFFE81089C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF6F2DC-DD46-4ADA-9616-FFFE81089C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF6F2DC-DD46-4ADA-9616-FFFE81089C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF6F2DC-DD46-4ADA-9616-FFFE81089C73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

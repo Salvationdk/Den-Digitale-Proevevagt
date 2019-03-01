@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DpvClassLibrary\\DpvClassLibrary",
+    "\\DpvClassLibrary\\DpvClassLibrary.Logging"
   ],
+  "SelectedNode": "\\DpvClassLibrary",
   "PreviewInSolutionExplorer": false
 }
