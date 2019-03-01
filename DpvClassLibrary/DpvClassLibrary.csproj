@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7126FF1C-08FE-455A-BB8A-08B87F70920D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClassLibrary1</RootNamespace>
+    <AssemblyName>ClassLibrary1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DpvClassLibrary.Configuration\TimerInstantiation.cs" />
+    <Compile Include="DpvClassLibrary.Configuration\TimerInstantiationCollection.cs" />
+    <Compile Include="DpvClassLibrary.Configuration\TimersConfigSection.cs" />
+    <Compile Include="DpvClassLibrary.Logging\ILogger.cs" />
+    <Compile Include="DpvClassLibrary.Logging\StaticFileLogger.cs" />
+    <Compile Include="DpvClassLibrary.Receivers\CommunicationLog.cs" />
+    <Compile Include="DpvClassLibrary.Receivers\DataPackageEnvelopeAwsReceiver.cs" />
+    <Compile Include="DpvClassLibrary.Receivers\DataPackageEnvelopeQueue.cs" />
+    <Compile Include="DpvClassLibrary.Receivers\ICommunicationLog.cs" />
+    <Compile Include="DpvClassLibrary.Receivers\IDataPackageEnvelopeReceiver.cs" />
+    <Compile Include="DpvClassLibrary.Receivers\IDataPackageReceiptReceiverNotifier.cs" />
+    <Compile Include="DpvClassLibrary.Receivers\ResponseFromServerEventArgs.cs" />
+    <Compile Include="DpvClassLibrary.Tools\ActiveWindowChangedDetectorTool.cs" />
+    <Compile Include="DpvClassLibrary.Tools\AppSettingsHelper.cs" />
+    <Compile Include="DpvClassLibrary.Tools\ColTypeExtensionMethods.cs" />
+    <Compile Include="DpvClassLibrary.Tools\CurrentBrowserUrlsTool.cs" />
+    <Compile Include="DpvClassLibrary.Tools\KeyloggerHelper.cs" />
+    <Compile Include="DpvClassLibrary.Tools\MachineFingerprintGenerator.cs" />
+    <Compile Include="DpvClassLibrary.Tools\ScreenCaptureTool.cs" />
+    <Compile Include="DpvClassLibrary.Workers\ClipboardTextWorker.cs" />
+    <Compile Include="DpvClassLibrary.Workers\DataPackageEnvelopeWorkerBase.cs" />
+    <Compile Include="DpvClassLibrary.Workers\HeartbeatWorker.cs" />
+    <Compile Include="DpvClassLibrary.Workers\KeyloggerWorker.cs" />
+    <Compile Include="DpvClassLibrary.Workers\NetworkConfigRetrieverWorker.cs" />
+    <Compile Include="DpvClassLibrary.Workers\NetworkInterfaceExtensionMethods.cs" />
+    <Compile Include="DpvClassLibrary.Workers\NetworkTrafficWorker.cs" />
+    <Compile Include="DpvClassLibrary.Workers\RunningProcessesWorker.cs" />
+    <Compile Include="DpvClassLibrary.Workers\ScreenshotWorker.cs" />
+    <Compile Include="DpvClassLibrary.Workers\StringSearchExtension.cs" />
+    <Compile Include="DpvClassLibrary.Workers\VirtualMachineDetectionWorker.cs" />
+    <Compile Include="DpvClassLibrary.Workers\WorkerBase.cs" />
+    <Compile Include="DpvClassLibrary\CommunicationsManager.cs" />
+    <Compile Include="DpvClassLibrary\ConnectionState.cs" />
+    <Compile Include="DpvClassLibrary\QRCodeHelper.cs" />
+    <Compile Include="DpvClassLibrary\ResponseFromServerDelegate.cs" />
+    <Compile Include="DpvClassLibrary\WorkflowStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DpvClassLibrary\.gitattributes" />
+    <Content Include="DpvClassLibrary\.gitignore" />
+    <Content Include="DpvClassLibrary\.git\ms-persist.xml" />
+    <Content Include="IO.Swagger.dll" />
+    <Content Include="QRCodeEncoderDecoderLibrary.dll" />
+    <Content Include="zxing.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DpvClassLibrary\.git\COMMIT_EDITMSG" />
+    <None Include="DpvClassLibrary\.git\config" />
+    <None Include="DpvClassLibrary\.git\description" />
+    <None Include="DpvClassLibrary\.git\HEAD" />
+    <None Include="DpvClassLibrary\.git\hooks\applypatch-msg.sample" />
+    <None Include="DpvClassLibrary\.git\hooks\commit-msg.sample" />
+    <None Include="DpvClassLibrary\.git\hooks\post-update.sample" />
+    <None Include="DpvClassLibrary\.git\hooks\pre-applypatch.sample" />
+    <None Include="DpvClassLibrary\.git\hooks\pre-commit.sample" />
+    <None Include="DpvClassLibrary\.git\hooks\pre-push.sample" />
+    <None Include="DpvClassLibrary\.git\hooks\pre-rebase.sample" />
+    <None Include="DpvClassLibrary\.git\hooks\pre-receive.sample" />
+    <None Include="DpvClassLibrary\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="DpvClassLibrary\.git\hooks\update.sample" />
+    <None Include="DpvClassLibrary\.git\index" />
+    <None Include="DpvClassLibrary\.git\info\exclude" />
+    <None Include="DpvClassLibrary\.git\logs\HEAD" />
+    <None Include="DpvClassLibrary\.git\logs\refs\heads\master" />
+    <None Include="DpvClassLibrary\.git\objects\00\8c94854b4ec80b6cadf4fa1e9d1ef4ca933d4c" />
+    <None Include="DpvClassLibrary\.git\objects\0e\6d01b42abc18dad52da5db04db305a41b01d9a" />
+    <None Include="DpvClassLibrary\.git\objects\1f\f0c423042b46cb1d617b81efb715defbe8054d" />
+    <None Include="DpvClassLibrary\.git\objects\2a\e0f35a4ad9beaad025d459a5e78f5feede362d" />
+    <None Include="DpvClassLibrary\.git\objects\31\de58517d5cac6d4189b97680f24c033371de3a" />
+    <None Include="DpvClassLibrary\.git\objects\3c\4efe206bd0e7230ad0ae8396a3c883c8207906" />
+    <None Include="DpvClassLibrary\.git\objects\46\651f22aa7d070b3cfd9d8a1ec4ad205969041f" />
+    <None Include="DpvClassLibrary\.git\objects\57\6d5fb7b8c0e1fb12c1091a12e9769643bf2180" />
+    <None Include="DpvClassLibrary\.git\objects\62\c9c7fe45a80fd3834b823bfe38baa7b9a63214" />
+    <None Include="DpvClassLibrary\.git\objects\73\86169fc58e3c0eff3b62fa61ca9fc5e6ea813f" />
+    <None Include="DpvClassLibrary\.git\objects\91\e3470e1645e6e8d0de6fe9f6b242f366e9a393" />
+    <None Include="DpvClassLibrary\.git\objects\a0\79cb64cd683dbeab049a6b937d9f077cb6be99" />
+    <None Include="DpvClassLibrary\.git\objects\a2\9f481ed32bf6b4ec6d1cce068cef5d41b08bf5" />
+    <None Include="DpvClassLibrary\.git\objects\b5\e10e7688e2e8e8410c984ab6afcb6e9d57b34c" />
+    <None Include="DpvClassLibrary\.git\objects\ce\50bb86bf1700dfaa9bf1de20c2646bc2ac72cf" />
+    <None Include="DpvClassLibrary\.git\objects\f3\917d44c0723a88f084ec3e35da968bc318b206" />
+    <None Include="DpvClassLibrary\.git\objects\f8\c904c1acad8905f8799d90e4617c14ae69d13f" />
+    <None Include="DpvClassLibrary\.git\refs\heads\master" />
+    <None Include="DpvClassLibrary\.vs\DpvClassLibrary\v15\.suo" />
+    <None Include="DpvClassLibrary\.vs\DpvClassLibrary\v15\Server\sqlite3\db.lock" />
+    <None Include="DpvClassLibrary\.vs\DpvClassLibrary\v15\Server\sqlite3\storage.ide" />
+    <None Include="DpvClassLibrary\.vs\DpvClassLibrary\v15\Server\sqlite3\storage.ide-shm" />
+    <None Include="DpvClassLibrary\.vs\DpvClassLibrary\v15\Server\sqlite3\storage.ide-wal" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DpvClassLibrary\.git\objects\info\" />
+    <Folder Include="DpvClassLibrary\.git\objects\pack\" />
+    <Folder Include="DpvClassLibrary\.git\refs\tags\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
