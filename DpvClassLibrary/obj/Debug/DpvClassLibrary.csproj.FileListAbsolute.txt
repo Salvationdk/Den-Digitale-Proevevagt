@@ -1,0 +1,17 @@
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\obj\Debug\DpvClassLibrary.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\obj\Debug\DpvClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\DpvClassLibrary.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\DpvClassLibrary.pdb
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\IO.Swagger.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\QRCodeEncoderDecoderLibrary.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\System.Configuration.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\System.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\System.Drawing.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\System.Management.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\System.Windows.Forms.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\UIAutomationClient.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\UIAutomationTypes.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\bin\Debug\zxing.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\obj\Debug\DpvClassLibrary.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\obj\Debug\DpvClassLibrary.dll
+C:\Users\Admin\Documents\GitHub\Den-Digitale-Proevevagt\DpvClassLibrary\obj\Debug\DpvClassLibrary.pdb

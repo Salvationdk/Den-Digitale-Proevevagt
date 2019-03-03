@@ -128,9 +128,9 @@ namespace DpvClassLibrary
 		private void Receiver_ResponseReceived(object sender, ResponseFromServerEventArgs e)
 		{
 			StaticFileLogger.Current.LogEvent(GetType().Name, "Receiver_ResponseReceived", $"Response received: {((object)e.Receipt).ToString()}", EventLogEntryType.Information);
-			if (e.Receipt.get_Status().HasValue)
+			if (e.Receipt.Status.HasValue)
 			{
-				switch (e.Receipt.get_Status().Value)
+				switch (e.Receipt.Status.Value)
 				{
 				case 1:
 					CurrentStatus = WorkflowStatus.SignedInButNotCollecting;
@@ -143,13 +143,13 @@ namespace DpvClassLibrary
 				}
 				OnEventFromServer(e);
 			}
-			if (e.Receipt.get_SecToStart().HasValue)
+			if (e.Receipt.Status.HasValue)
 			{
-				ChangeSecondsToStart(e.Receipt.get_SecToStart().Value);
+				ChangeSecondsToStart(e.Receipt.Status.Value);
 			}
-			if (e.Receipt.get_SecToStop().HasValue)
+			if (e.Receipt.Status.HasValue)
 			{
-				ChangeSecondsToStop(e.Receipt.get_SecToStop().Value);
+				ChangeSecondsToStop(e.Receipt.Status.Value);
 			}
 		}
 

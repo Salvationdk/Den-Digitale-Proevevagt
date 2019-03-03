@@ -29,7 +29,7 @@ namespace DpvClassLibrary
 				BitmapLuminanceSource val2 = new BitmapLuminanceSource(imageToSearch);
 				BinaryBitmap val3 = new BinaryBitmap(new HybridBinarizer(val2));
 				Result val4 = val.decode(val3);
-				return (val4 != null) ? val4.get_Text() : null;
+				return (val4 != null) ? val4.Text : null;
 			}
 			QRDecoder val5 = new QRDecoder();
 			byte[][] array = val5.ImageDecoder(imageToSearch);
